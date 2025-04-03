@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Asignación de Sectores</title>
+</head>
+<body>
+  <h2>Formulario de Registro</h2>
+  <form method="POST">
+    <input type="text" name="nombre" placeholder="Nombre completo" required>
+    <input type="text" name="dui" placeholder="DUI" required>
+    <input type="text" name="sector" placeholder="Sector censal" required>
+    <input type="text" name="x" placeholder="Coordenada X" required>
+    <input type="text" name="y" placeholder="Coordenada Y" required>
+    <button type="submit">Guardar</button>
+  </form>
+
+  <h3>Lista de Personas Registradas</h3>
+  <table border="1">
+    <tr>
+      <th>Nombre</th>
+      <th>DUI</th>
+      <th>Sector</th>
+      <th>Coordenada X</th>
+      <th>Coordenada Y</th>
+    </tr>
+    {% for persona in datos %}
+    <tr>
+      <td>{{ persona[0] }}</td>
+      <td>{{ persona[1] }}</td>
+      <td>{{ persona[2] }}</td>
+      <td>{{ persona[3] }}</td>
+      <td>{{ persona[4] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
